@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+
+import Layout from "./components/Layout";
 
 function App() {
+  const [token, setToken] = useState("");
+
+  const updateToken = (newToken) => {
+    localStorage.setItem("token", newToken);
+    setToken(newToken);
+  };
+
+  const clearToken = () => {
+    localStorage.clear();
+    setToken("");
+  };
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+    // console.log(token);
+  }, [token]);
+
+  useEffect(() => {
+    document.title = "TrailFlow";
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout updateToken={updateToken} clearToken={clearToken} token={token} />
+    ///         (1)                       (2)                   (3)   These 3 props are initialized here!!!!!!!
   );
 }
 
