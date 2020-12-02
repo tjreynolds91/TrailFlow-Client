@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import APIURL from "../helpers/environment";
 import {
   Button,
   Container,
@@ -23,7 +24,7 @@ const Register = (props) => {
     console.log(isValid);
     if (isValid) {
       if (password === password2) {
-        fetch("https://tjr-trailflow.herokuapp.com/user/register", {
+        fetch(`${APIURL}/user/register`, {
           //!needs to be updated to heroku for "production"
           method: "POST",
           headers: { "Content-Type": "application/json" },

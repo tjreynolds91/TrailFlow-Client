@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Label, Input, Form } from "reactstrap";
+import APIURL from "../helpers/environment";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -9,7 +10,7 @@ const Login = (props) => {
   const submitLogin = (event) => {
     if (email && password) {
       event.preventDefault();
-      fetch("https://tjr-trailflow.herokuapp.com/user/login", {
+      fetch(`${APIURL}/user/login`, {
         //!needs to be updated to heroku for "production"
         method: "POST",
         headers: { "Content-Type": "application/json" },

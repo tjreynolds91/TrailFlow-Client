@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import APIURL from "../../helpers/environment";
 import {
   Button,
   Modal,
@@ -21,7 +22,7 @@ const CreateListModal = (props) => {
   };
 
   const createList = () => {
-    fetch("https://biblioquest.herokuapp.com/list/newList", {
+    fetch(`${APIURL}/list/newList`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

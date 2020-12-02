@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CreateListModal from "./CreateListModal";
 import DisplayListModal from "./DisplayListModal";
+import APIURL from "../../helpers/environment";
 
 const ListModals = (props) => {
   const [lists, setLists] = useState([]);
@@ -10,7 +11,7 @@ const ListModals = (props) => {
   const [listResponse, setListResponse] = useState("");
 
   useEffect(() => {
-    fetch("https://tjr-trailflow.herokuapp.com/list/allLists", {
+    fetch(`${APIURL}/list/allLists`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

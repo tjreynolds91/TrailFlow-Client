@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import APIURL from "../helpers/environment";
 import {
   Button,
   Modal,
@@ -26,7 +27,7 @@ const BookAdderModal = (props) => {
 
   const bookAddFetch = (listTitle) => {
     console.log(listTitle);
-    fetch(`https://tjr-trailflow.herokuapp.com/book/addBook`, {
+    fetch(`${APIURL}/trail/addTrail`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +64,7 @@ const BookAdderModal = (props) => {
   };
 
   useEffect(() => {
-    fetch("https://tjr-trailflow.herokuapp.com/list/allLists", {
+    fetch(`${APIURL}/list/allLists`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
