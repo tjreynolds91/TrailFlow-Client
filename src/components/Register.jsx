@@ -45,10 +45,10 @@ export default class Register extends React.Component {
               return res.json();
             } else {
               if (res.status === 409) {
-                this.setResponseMessage("Account Already Exists");
+                this.setState({ responseMessage: "Account Already Exists" });
                 throw new Error("Account Already Exist");
               } else {
-                this.setResponseMessage("Something went wrong");
+                this.setState({ responseMessage: "Something went wrong" });
                 throw new Error("Something went wrong");
               }
             }
@@ -56,7 +56,7 @@ export default class Register extends React.Component {
           .then((data) => {
             this.props.updateToken(data.token);
             console.log(data.message);
-            this.setResponseMessage(data.message);
+            this.setState({ responseMessage: data.message });
           })
           .catch((err) => {
             alert(err);
@@ -87,8 +87,8 @@ export default class Register extends React.Component {
       isValid = false;
     }
 
-    this.setPasswordErr(passwordErr);
-    this.setEmailErr(emailErr);
+    this.setState({ passwordErr: passwordErr });
+    this.setState({ emailErr: emailErr });
     return isValid;
   }
 
@@ -100,7 +100,7 @@ export default class Register extends React.Component {
             <Container className="form-group input-group">
               <Label for="email" className="sr-only" />
               <Input
-                onChange={(e) => this.setEmail(e.target.value)}
+                onChange={(e) => this.setState({ email: e.target.value })}
                 type="email"
                 className="form-control"
                 id="email"
@@ -121,7 +121,7 @@ export default class Register extends React.Component {
             <Container className="form-group input-group">
               <Label for="password" className="sr-only" />
               <Input
-                onChange={(e) => this.setPassword(e.target.value)}
+                onChange={(e) => this.setState({ password: e.target.value })}
                 type="password"
                 className="form-control"
                 id="password"
@@ -141,7 +141,7 @@ export default class Register extends React.Component {
             <Container className="form-group input-group">
               <Label for="password2" className="sr-only" />
               <Input
-                onChange={(e) => this.state.setPassword2(e.target.value)}
+                onChange={(e) => this.setState({ password2: e.target.value })}
                 type="password"
                 className="form-control"
                 id="password2"

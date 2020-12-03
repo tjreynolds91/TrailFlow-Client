@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
+import APIURL from "../helpers/environment";
 import {
   Button,
   Modal,
@@ -57,7 +58,7 @@ export default class LoginModal extends React.Component {
                 className="modalFooterLink"
                 data-toggle="modal"
                 data-dismiss="modal"
-                onClick={(e) => this.setToggle2(!this.state.toggle2)}
+                onClick={(e) => this.setState({ toggle2: !this.state.toggle2 })}
               >
                 {this.state.toggle2 ? "Sign Up" : "Login"}{" "}
               </Button>

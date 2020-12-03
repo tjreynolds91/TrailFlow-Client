@@ -14,8 +14,8 @@ import {
   Form,
 } from "reactstrap";
 
-const BookAdderModal = (props) => {
-  const [bookAddRes, setBookAddRes] = useState("");
+const TrailAdderModal = (props) => {
+  const [trailAddRes, setTrailAddRes] = useState("");
   const [err, setErr] = useState("");
   const [lists, setLists] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -34,27 +34,38 @@ const BookAdderModal = (props) => {
         Authorization: props.token,
       },
       body: JSON.stringify({
-        book: {
+        trail: {
           listTitle: listTitle,
-          title: props.book.volumeInfo.title,
-          subTitle: props.book.volumeInfo.subtitle,
-          author: props.book.volumeInfo.authors,
-          read: false,
-          description: props.book.volumeInfo.description,
-          costRetail: null,
-          length: props.book.volumeInfo.pageCount,
-          category: props.book.volumeInfo.categories,
-          publisher: props.book.volumeInfo.publisher,
-          publicationDate: props.book.volumeInfo.publishedDate,
-          ISBN: props.book.volumeInfo.industryIdentifiers[0].identifier,
-          smallThumbnailURL: props.book.volumeInfo.imageLinks.smallThumbnail,
-          thumbnailURL: props.book.volumeInfo.imageLinks.thumbnail,
+          mtbID: props.trail.id,
+          name: props.trail.name,
+          type: props.trail.type,
+          summary: props.trail.summary,
+          difficulty: props.trail.difficulty,
+          stars: props.trail.stars,
+          starVotes: props.trail.starVotes,
+          location: props.trail.location,
+          url: props.trail.url,
+          imgSqSmall: props.trail.imgSqSmall,
+          imgSmall: props.trail.imgSmall,
+          imgSmallMed: props.trail.imgSmallMed,
+          imgMedium: props.trail.imgMedium,
+          length: props.trail.length,
+          ascent: props.trail.ascent,
+          decent: props.trail.decent,
+          high: props.trail.high,
+          low: props.trail.low,
+          longitude: props.trail.longitude,
+          latitude: props.trail.latitude,
+          conditionStatus: props.trail.conditionStatus,
+          conditionDetails: props.trail.conditionDetails,
+          conditionDate: props.trail.conditionDate,
+          ridden: false,
         },
       }),
     })
       .then((res) => res.json())
       .then((data) => {
-        setBookAddRes(data.message);
+        setTrailAddRes(data.message);
         console.log(data.message);
       })
       .catch((err) => {
@@ -131,4 +142,4 @@ const BookAdderModal = (props) => {
   );
 };
 
-export default BookAdderModal;
+export default TrailAdderModal;

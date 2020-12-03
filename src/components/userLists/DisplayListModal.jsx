@@ -19,7 +19,7 @@ import {
 export default class DisplayListModal extends React.Component {
   constructor(props) {
     super(props);
-    this.bookUpdater = this.bookUpdater.bind(this);
+    this.trailUpdater = this.trailUpdater.bind(this);
     this.listUpdater = this.listUpdater.bind(this);
     this.listDeleter = this.listDeleter.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -28,7 +28,7 @@ export default class DisplayListModal extends React.Component {
     this.state = {
       modal: false,
       btnTitle: "",
-      books: [],
+      trails: [],
       newListTitle: "",
     };
   }
@@ -79,7 +79,7 @@ export default class DisplayListModal extends React.Component {
       });
   }
 
-  bookUpdater(trail) {
+  trailUpdater(trail) {
     fetch(`${APIURL}/trail/update/${trail.id}`, {
       method: "PUT",
       headers: {
@@ -107,9 +107,9 @@ export default class DisplayListModal extends React.Component {
       },
     })
       .then((res) => res.json())
-      .then((booksData) => {
-        console.log(booksData);
-        this.setState({ books: booksData.data });
+      .then((trailsData) => {
+        console.log(trailsData);
+        this.setState({ trails: trailsData.data });
       })
       .catch((err) => {});
   }
@@ -133,7 +133,9 @@ export default class DisplayListModal extends React.Component {
               <>
                 <Label for="newListTitle" className="sr-only" />
                 <Input
-                  onChange={(e) => this.setNewListTitle(e.target.value)}
+                  onChange={(e) =>
+                    this.setState({ newListTitle: e.target.value })
+                  }
                   type="text"
                   className="form-control"
                   id="newListTitle"
@@ -143,33 +145,34 @@ export default class DisplayListModal extends React.Component {
                   Submit Update
                 </Button>
               </>
-            ) : this.state.books.length > 0 ? (
-              this.state.books.map((book, index) => {
+            ) : this.state.trails.length > 0 ? (
+              this.state.trails.map((trail, index) => {
                 return (
                   <div>
                     <Card key={index} style={{ display: "flex" }}>
                       <CardImg
                         top
                         width="100%"
-                        src={this.state.book.smallThumbnailURL}
+                        src={this.state.trail.imgMedium}
                         alt="Card image cap"
                         style={{ width: "10em", height: "15em" }}
                       />
                       <CardBody>
-                        <CardTitle tag="h5">{this.state.book.title}</CardTitle>
-                        <CardSubtitle tag="h6" className="mb-2 text-muted">
-                          {this.state.book.subtitle ? (
-                            this.state.book.subtitle
-                          ) : (
-                            <></>
-                          )}
-                        </CardSubtitle>
-                        <CardText>{`Author: ${this.state.book.author}`}</CardText>
-                        {this.state.book.read ? (
+                        <CardTitle tag="h5">{this.state.trail.name}</CardTitle>
+                        <CardSubtitle
+                          tag="h6"
+                          className="mb-2 text-muted"
+                        ></CardSubtitle>
+                        <CardText>{`Summary: ${this.state.trail.summary}`}</CardText>
+                        <CardText>{`Location: ${this.props.trail.location}`}</CardText>
+                        <CardText>{`Difficulty: ${this.props.trail.difficulty}`}</CardText>
+                        <CardText>{`Length in Miles: ${this.props.trail.length}`}</CardText>
+                        <CardText>{`Star Rating: ${this.props.trail.stars}`}</CardText>
+                        {this.state.trail.ridden ? (
                           <div>
                             <Input
                               type="checkbox"
-                              onClick={(e) => this.bookUpdater(book)}
+                              onClick={(e) => this.trailUpdater(trail)}
                               value="Ridden?"
                             ></Input>
                             <span>Ridden?</span>
@@ -178,7 +181,7 @@ export default class DisplayListModal extends React.Component {
                           <div>
                             <Input
                               type="checkbox"
-                              onClick={(e) => this.bookUpdater(book)}
+                              onClick={(e) => this.trailUpdater(trail)}
                               value="Ridden?"
                               defaultChecked
                             ></Input>

@@ -43,12 +43,11 @@ const CreateListModal = (props) => {
         {"Create a Bookshelf!"}
       </Button>
       <Modal isOpen={modal} toggle={toggle} className="{className}">
-        <ModalHeader toggle={toggle}>Create Shelf</ModalHeader>
+        <ModalHeader toggle={toggle}>Create List</ModalHeader>
         <ModalBody>
           <p>
-            Biblioquest's Bookshelves are a great way to keep your reading items
-            ordered and remind yourself about that great book you wanted to
-            read!
+            TrailFlow's TrailLists are a great way to store and organize trails
+            that you have ridden, wish to ride, and any other way you see fit!
           </p>
           <Label for="listTitle" className="sr-only" />
           <Input
@@ -61,7 +60,7 @@ const CreateListModal = (props) => {
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={(e) => createList()}>
-            Create Bookshelf
+            Create TrailList
           </Button>
           <Button color="secondary" onClick={toggle}>
             Cancel

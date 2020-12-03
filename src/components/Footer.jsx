@@ -1,10 +1,22 @@
 import React from "react";
 import { Row } from "reactstrap";
 
-const FooterComponent = (props) => {
-  return (
-    <Row className="footer">&copy;{new Date().getFullYear()} TrailFlow</Row>
-  );
-};
+export default class FooterComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default FooterComponent;
+  render() {
+    return (
+      <Row className="footer">&copy;{new Date().getFullYear()} TrailFlow</Row>
+    );
+  }
+}
+
+// const FooterComponent = (props) => {
+//   return (
+//     <Row className="footer">&copy;{new Date().getFullYear()} TrailFlow</Row>
+//   );
+// };
+
+// export default FooterComponent;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavbarComponent from "./NavbarComponent";
 import Footer from "./Footer";
 import UserListMenu from "./userLists/UserListMenu";
-import BookCard from "./BookCard";
+import TrailCard from "./TrailCard";
 
 import {
   Input,
@@ -26,31 +26,32 @@ function Layout(props) {
 
     fetch(
       // `https://www.googleapis.com/books/v1/volumes?q=${searchInput}&maxResults=40&printType=books`
-      `https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200971144-3154da4391861b1faaaf7f1c8d1134a4`
+      `https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&key=200971144-3154da4391861b1faaaf7f1c8d1134a4`
     )
       .then((response) => response.json())
       .then((res) => {
-        showResults(res.items);
+        showResults(res.trails);
+        console.log(res);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
 
-  function filterBook(filter) {
-    console.log(filter);
-    fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${filter}&maxResults=40&printType=books`
-      // ``
-    )
-      .then((response) => response.json())
-      .then((res) => {
-        showResults(res.items);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
+  // function filterTrail(filter) {
+  //   console.log(filter);
+  //   fetch(
+  //     // `https://www.googleapis.com/books/v1/volumes?q=${filter}&maxResults=40&printType=books`
+  //     `https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&key=200971144-3154da4391861b1faaaf7f1c8d1134a4`
+  //   )
+  //     .then((response) => response.json())
+  //     .then((res) => {
+  //       showResults(res.trails);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // }
 
   return (
     <Container className="masterContainer rb bsb" fluid="?">
@@ -73,10 +74,10 @@ function Layout(props) {
                 <Input
                   className="form-control"
                   id="searchInput"
-                  placeholder="Search trail, difficulty, or location . . ."
+                  placeholder="Search trails near your vicinity . . ."
                 />
                 <InputGroupAddon addonType="append">
-                  <Button onClick={(e) => searchAll()}>Search</Button>
+                  <Button onClick={(e) => searchAll(e)}>Search</Button>
                 </InputGroupAddon>
               </InputGroup>
             </Form>
@@ -100,7 +101,7 @@ function Layout(props) {
                 <p>Staff List</p>
                 <p>Popular</p>
                 <br />
-                <h5 onClick={(e) => filterBook("subject:fiction")}>Fiction</h5>
+                <h5 onClick={(e) => filtertrail("subject:fiction")}>Fiction</h5>
                 <hr />
                 <p onClick={(e) => filterBook("subject:'young adult'")}>
                   Young Adult
@@ -154,11 +155,12 @@ function Layout(props) {
                 }}
               >
                 {results.length > 0 ? (
-                  results.map((book, index) => {
+                  results.map((trail, index) => {
                     /// Here map()is mapping the results.length > 0 results to the key index number and then to the book card/card named book.
                     return (
+                      // <p>{trail.id}</p>
                       <div key={index}>
-                        <BookCard book={book} token={props.token} />
+                        <TrailCard trail={trail} token={props.token} />
                       </div>
                     );
                   })
