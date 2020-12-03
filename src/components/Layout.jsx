@@ -25,7 +25,8 @@ function Layout(props) {
     const searchInput = document.getElementById("searchInput").value;
 
     fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${searchInput}&maxResults=40&printType=books`
+      // `https://www.googleapis.com/books/v1/volumes?q=${searchInput}&maxResults=40&printType=books`
+      `https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200971144-3154da4391861b1faaaf7f1c8d1134a4`
     )
       .then((response) => response.json())
       .then((res) => {
@@ -40,6 +41,7 @@ function Layout(props) {
     console.log(filter);
     fetch(
       `https://www.googleapis.com/books/v1/volumes?q=${filter}&maxResults=40&printType=books`
+      // ``
     )
       .then((response) => response.json())
       .then((res) => {
