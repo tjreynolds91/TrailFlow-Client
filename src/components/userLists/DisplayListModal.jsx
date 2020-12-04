@@ -34,7 +34,7 @@ export default class DisplayListModal extends React.Component {
   }
 
   toggle() {
-    this.setState({ modal: !this.modal });
+    this.setState({ modal: !this.state.modal });
   }
 
   buttonTitleUpdater() {
@@ -153,22 +153,22 @@ export default class DisplayListModal extends React.Component {
                       <CardImg
                         top
                         width="100%"
-                        src={this.state.trail.imgMedium}
+                        src={trail.imgSmall}
                         alt="Card image cap"
                         style={{ width: "10em", height: "15em" }}
                       />
                       <CardBody>
-                        <CardTitle tag="h5">{this.state.trail.name}</CardTitle>
+                        <CardTitle tag="h5">{trail.name}</CardTitle>
                         <CardSubtitle
                           tag="h6"
                           className="mb-2 text-muted"
                         ></CardSubtitle>
-                        <CardText>{`Summary: ${this.state.trail.summary}`}</CardText>
-                        <CardText>{`Location: ${this.props.trail.location}`}</CardText>
-                        <CardText>{`Difficulty: ${this.props.trail.difficulty}`}</CardText>
-                        <CardText>{`Length in Miles: ${this.props.trail.length}`}</CardText>
-                        <CardText>{`Star Rating: ${this.props.trail.stars}`}</CardText>
-                        {this.state.trail.ridden ? (
+                        <CardText>{`Summary: ${trail.summary}`}</CardText>
+                        <CardText>{`Location: ${trail.location}`}</CardText>
+                        <CardText>{`Difficulty: ${trail.difficulty}`}</CardText>
+                        <CardText>{`Length in Miles: ${trail.length}`}</CardText>
+                        <CardText>{`Star Rating: ${trail.stars}`}</CardText>
+                        {trail.ridden ? (
                           <div>
                             <Input
                               type="checkbox"
@@ -213,7 +213,7 @@ export default class DisplayListModal extends React.Component {
                 <>Update TrailList Title?</>
               )}
             </Button>
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={(e) => this.toggle()}>
               Close
             </Button>
           </ModalFooter>
