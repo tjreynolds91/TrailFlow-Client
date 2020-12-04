@@ -51,11 +51,11 @@ export default class DisplayListModal extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        this.props.setDeleteResponse(res.message);
+        this.props.settingState("deleteResponse", res.message);
         this.toggle();
       })
       .catch((err) => {
-        this.props.setDeleteResponse(err);
+        this.props.settingState("deleteResponse", err);
       });
   }
 
@@ -70,12 +70,12 @@ export default class DisplayListModal extends React.Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        this.props.setUpdateListRes(res.message);
+        this.props.settingState("updateListRes", res.message);
         console.log(res.message);
         this.toggle();
       })
       .catch((err) => {
-        this.props.setUpdateListRes(err);
+        this.props.settingState("updateListRes", err);
       });
   }
 
