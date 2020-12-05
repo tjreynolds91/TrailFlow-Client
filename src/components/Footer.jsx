@@ -8,7 +8,9 @@ export default class FooterComponent extends React.Component {
 
   render() {
     return (
-      <Row className="footer">&copy;{new Date().getFullYear()} TrailFlow</Row>
+      <Row className="footer">
+        &copy;{new Date().getFullYear()} Timothy Reynolds
+      </Row>
     );
   }
 }
