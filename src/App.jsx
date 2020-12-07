@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./css/components.css";
 import Layout from "./components/Layout";
-
+console.log("heroku");
 export default class App extends React.Component {
   constructor(props) {
     super(props);
