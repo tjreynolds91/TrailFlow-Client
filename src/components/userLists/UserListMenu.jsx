@@ -13,7 +13,7 @@ export default class UserList extends React.Component {
 
   render() {
     return this.props.token ? (
-      <div className="">
+      <div className="listBar">
         <>
           <ListModals token={this.props.token} />
         </>

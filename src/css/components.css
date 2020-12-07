@@ -236,3 +236,8 @@ code {
   font-style: oblique;
   cursor: pointer;
 }
+
+.colThree {
+  width: 25vw;
+  border: 12px solid red;
+}
