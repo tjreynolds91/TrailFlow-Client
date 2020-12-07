@@ -29,6 +29,7 @@ export default class CreateListModal extends React.Component {
   }
 
   createList() {
+    // event.preventDefault();
     fetch(`${APIURL}/list/newList`, {
       method: "POST",
       headers: {
@@ -73,6 +74,7 @@ export default class CreateListModal extends React.Component {
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={(e) => this.createList()}>
+              {/* <Button color="primary" onClick={this.createList.bind(this)}> */}
               Create TrailList
             </Button>
             <Button color="secondary" onClick={this.toggle}>

@@ -15,6 +15,7 @@ export default class App extends React.Component {
 
   updateToken(newToken) {
     this.setState({ token: newToken });
+    console.log("tokenUpdated");
 
     localStorage.setItem("token", newToken);
     // setToken(newToken);
@@ -23,6 +24,7 @@ export default class App extends React.Component {
   clearToken() {
     this.setState({ token: "" });
     localStorage.clear();
+    console.log("tokenCleared");
     // setToken("");
   }
 
