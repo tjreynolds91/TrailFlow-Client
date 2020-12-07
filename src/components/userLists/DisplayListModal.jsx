@@ -15,7 +15,7 @@ import {
   CardBody,
   CardImg,
 } from "reactstrap";
-
+console.log("display list");
 export default class DisplayListModal extends React.Component {
   constructor(props) {
     super(props);

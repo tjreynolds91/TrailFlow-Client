@@ -10,7 +10,7 @@ import {
   Input,
   Alert,
 } from "reactstrap";
-
+console.log("create list");
 export default class CreateListModal extends React.Component {
   constructor(props) {
     super(props);

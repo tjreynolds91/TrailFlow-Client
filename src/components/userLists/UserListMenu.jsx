@@ -5,7 +5,7 @@ import ListModals from "./ListModals";
 // import APIURL from "../../helpers/environment";
 
 // App component
-
+console.log("listMenu");
 export default class UserList extends React.Component {
   constructor(props) {
     super(props);
