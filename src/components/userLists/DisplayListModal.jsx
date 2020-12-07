@@ -42,7 +42,7 @@ export default class DisplayListModal extends React.Component {
   }
 
   listDeleter() {
-    fetch(`${APIURL}/list/deletelist/${this.props.list.id}`, {
+    fetch(`${APIURL}/list/deleteList/${this.props.list.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
