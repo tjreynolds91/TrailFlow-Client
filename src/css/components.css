@@ -92,9 +92,9 @@ code {
 }
 
 /* .catBoxOfTheDay {
-  color: #463d19;
-  background-color: #dec8a0;
-} */
+    color: #463d19;
+    background-color: #dec8a0;
+  } */
 
 .footer {
   margin: 0 auto;
@@ -168,15 +168,15 @@ code {
 }
 
 /* .bookRibbon {
-  z-index: 1;
-  position: absolute;
-  width: 100px;
-  height: 300px;
-  margin-left: 50px;
-  margin-top: -10px;
-  background-color: red;
-  border: 10px double rgba(255, 255, 255, 0.75);
-} */
+    z-index: 1;
+    position: absolute;
+    width: 100px;
+    height: 300px;
+    margin-left: 50px;
+    margin-top: -10px;
+    background-color: red;
+    border: 10px double rgba(255, 255, 255, 0.75);
+  } */
 
 .categoryScrollContainer h5,
 .categoryScrollContainer h4 {

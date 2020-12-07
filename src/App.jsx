@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "./css/components.css";
 import Layout from "./components/Layout";
 
 export default class App extends React.Component {
