@@ -51,7 +51,7 @@ code {
 .col {
   margin: 10px;
   padding: 10px;
-  /* border: 1px solid black; */
+  border: 5px solid black;
   text-align: center;
   width: 90vw;
 }
@@ -60,13 +60,13 @@ code {
   background-color: #e1d9e6;
 }
 
-.colOne .colThree {
+.colThree {
   width: 15%;
   /* background-color: #714938; */
 }
 
 .rowOne {
-  position: relative;
+  /* position: relative; */
   margin: 0 auto;
   margin-bottom: 10px;
   height: 90%;
@@ -91,10 +91,10 @@ code {
   height: 240px;
 }
 
-/* .catBoxOfTheDay {
-    color: #463d19;
-    background-color: #dec8a0;
-  } */
+.catBoxOfTheDay {
+  color: #463d19;
+  background-color: #dec8a0;
+}
 
 .footer {
   margin: 0 auto;
@@ -240,4 +240,14 @@ code {
 .colThree {
   width: 25vw;
   border: 12px solid red;
+}
+
+.colTwo {
+  border: 5px solid blue;
+  padding-right: -150px;
+}
+
+.colOne {
+  border: 5px solid purple;
+  padding-right: -150px;
 }

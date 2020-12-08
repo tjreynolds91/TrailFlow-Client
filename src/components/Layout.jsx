@@ -134,7 +134,7 @@ export default class Layout extends React.Component {
                 </div>
               </div>
             </Col> */}
-            <Col className="colTwo brownBG rb">
+            <Col className="colOne brownBG rb">
               <Row className="popBookCarousel rb">
                 <Col
                   id="displaySearchContent"
@@ -163,7 +163,7 @@ export default class Layout extends React.Component {
                 </Col>
               </Row>
             </Col>
-            <Col className="colThree col colColor rb bsb" xs="2">
+            <Col className="colTwo col colColor rb bsb" xs="2">
               <UserListMenu token={this.props.token} />
             </Col>
           </Row>
