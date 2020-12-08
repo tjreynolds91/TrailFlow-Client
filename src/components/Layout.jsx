@@ -78,13 +78,14 @@ export default class Layout extends React.Component {
             </Col>
           </Row>
           <Row className="rowOne row rb">
-            {/* <Col
-              className="colOne col colColor rb bsb"
-              xs="2"
-              style={{ zIndex: "2" }}
-            >
-              <div className="categoryScrollContainer">
-                <h4>Categories</h4>
+            {
+              <Col
+                className="colOne col colColor rb bsb"
+                xs="2"
+                style={{ zIndex: "2" }}
+              >
+                <div className="categoryScrollContainer">
+                  {/* <h4>Categories</h4>
                 <hr />
                 <div className="categoryScroll">
                   <h5>Featured</h5>
@@ -130,10 +131,11 @@ export default class Layout extends React.Component {
                   <p onClick={(e) => filterBook("subject:history")}>History</p>
                   <p onClick={(e) => filterBook("subject:health")}>
                     Health and Fitness
-                  </p>
+                  </p> */}
+                  {/* </div> */}
                 </div>
-              </div>
-            </Col> */}
+              </Col>
+            }
             <Col className="colTwo brownBG rb">
               <Row className="popBookCarousel rb">
                 <Col
