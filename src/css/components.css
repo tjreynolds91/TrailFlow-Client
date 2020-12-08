@@ -43,9 +43,10 @@ code {
   position: absolute;
   top: 0;
   left: 15px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   background-color: #9bb4d4;
+  font-weight: bold;
 }
 
 .col {
@@ -236,7 +237,7 @@ code {
   font-style: oblique;
   cursor: pointer;
 }
-
+/* 
 .colThree {
   width: 25vw;
   border: 12px solid red;
@@ -250,4 +251,4 @@ code {
 .colOne {
   border: 5px solid purple;
   padding-right: -150px;
-}
+} */
