@@ -16,7 +16,7 @@ code {
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   width: 95vw;
   height: 90vh;
   overflow: hidden;
@@ -32,7 +32,7 @@ code {
   margin-top: 6vh;
   margin-left: 5%;
   padding: 10px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   overflow: hidden;
   height: 90%;
   width: 90%;
@@ -43,7 +43,7 @@ code {
   position: absolute;
   top: 0;
   left: 15px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   width: 100%;
   background-color: #9bb4d4;
 }
@@ -57,7 +57,7 @@ code {
 }
 
 .colColor {
-  background-color: #dec8a0;
+  background-color: #e1d9e6;
 }
 
 .colOne .colThree {
@@ -183,7 +183,7 @@ code {
   color: rgba(50, 50, 50);
 }
 
-.displayBooks {
+.displayTrails {
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -193,7 +193,7 @@ code {
   justify-content: space-evenly;
 }
 
-.bookCardContainer {
+.trailCardContainer {
   margin: 10px auto;
   padding: 10px;
   min-width: 300px;
@@ -202,7 +202,7 @@ code {
   flex-wrap: wrap;
 }
 
-.bookCard {
+.trailCard {
   margin: 0 auto;
   height: 550px;
   width: 300px;
@@ -215,11 +215,11 @@ code {
   box-shadow: 0px 0px 3px 3px #a54849;
 }
 
-.bookCardBody {
+.trailCardBody {
   font-size: 12px;
 }
 
-.bookCardBodyTitle {
+.trailCardBodyTitle {
   font-size: 16px;
 }
 

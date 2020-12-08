@@ -17,8 +17,8 @@ export default class TrailCard extends React.Component {
 
   render() {
     return (
-      <div className="bookCardContainer">
-        <Card className="bookCard">
+      <div className="trailCardContainer">
+        <Card className="trailCard">
           <CardImg
             top
             width="100%"
@@ -35,8 +35,8 @@ export default class TrailCard extends React.Component {
               paddingTop: "10px",
             }}
           />
-          <CardBody className="bookCardBody">
-            <CardTitle className="bookCardBodyTitle" tag="h5">
+          <CardBody className="trailCardBody">
+            <CardTitle className="trailCardBodyTitle" tag="h5">
               {this.props.trail.name}
             </CardTitle>
             <CardSubtitle></CardSubtitle>

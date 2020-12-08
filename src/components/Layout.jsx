@@ -138,7 +138,7 @@ export default class Layout extends React.Component {
               <Row className="popBookCarousel rb">
                 <Col
                   id="displaySearchContent"
-                  className="displayBooks colColor rb bsb"
+                  className="displayTrails colColor rb bsb"
                   style={{
                     margin: "25px",
                     padding: "10px",

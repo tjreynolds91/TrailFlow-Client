@@ -75,8 +75,8 @@ export default class Register extends React.Component {
     let isValid = true;
 
     // checks password length and returns error if <5
-    if (this.state.password.trim().length < 5) {
-      passwordErr.TooShort = "Password must contain 5 or more characters.";
+    if (this.state.password.trim().length < 8) {
+      passwordErr.TooShort = "Password must contain 8 or more characters.";
       isValid = false;
     }
 
