@@ -30,7 +30,7 @@ code {
   position: absolute;
   margin: 0 auto;
   margin-top: 6vh;
-  margin-left: 5%;
+  margin-left: 0%;
   padding: 10px;
   border: 1px solid black;
   overflow: hidden;
@@ -67,7 +67,7 @@ code {
 
 .rowOne {
   /* position: relative; */
-  margin: 0 auto;
+  margin-left: 1000mm;
   margin-bottom: 10px;
   height: 90%;
 }
