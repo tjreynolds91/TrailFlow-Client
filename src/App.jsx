@@ -10,11 +10,31 @@ export default class App extends React.Component {
 
     this.state = {
       token: "",
+      isAuth: false,
     };
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem("token")) {
+      const token = localStorage.getItem("token");
+      if (token) {
+        this.setState({
+          token: token,
+          isAuth: true,
+        });
+      } else {
+        console.log("you goofed");
+      }
+    } else {
+      this.setState({
+        token: "",
+      });
+    }
   }
 
   updateToken(newToken) {
     this.setState({ token: newToken });
+    this.setState({ isAuth: true });
     console.log("tokenUpdated");
 
     localStorage.setItem("token", newToken);
@@ -31,6 +51,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Layout
+        isAuth={isAuth}
         updateToken={this.updateToken}
         clearToken={this.clearToken}
         token={this.state.token}

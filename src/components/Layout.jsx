@@ -43,6 +43,8 @@ export default class Layout extends React.Component {
       });
   }
 
+  //
+
   render() {
     return (
       <Container className="masterContainer rb bsb" fluid="?">
@@ -166,7 +168,11 @@ export default class Layout extends React.Component {
               </Row>
             </Col>
             <Col className="colThree col colColor rb bsb" xs="2">
-              <UserListMenu token={this.props.token} />
+              {this.props.isAuth ? (
+                <UserListMenu token={this.props.token} />
+              ) : (
+                <h1>Sorry, user must login to crud</h1>
+              )}
             </Col>
           </Row>
         </Container>
