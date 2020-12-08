@@ -16,7 +16,7 @@ code {
   margin: auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 95vw;
   height: 90vh;
   overflow: hidden;
@@ -32,7 +32,7 @@ code {
   margin-top: 6vh;
   margin-left: 5%;
   padding: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   overflow: hidden;
   height: 90%;
   width: 90%;
@@ -52,7 +52,7 @@ code {
 .col {
   margin: 10px;
   padding: 10px;
-  border: 5px solid black;
+  /* border: 5px solid black; */
   text-align: center;
   width: 90vw;
 }
@@ -62,7 +62,7 @@ code {
 }
 
 .colThree {
-  width: 15%;
+  width: 25%;
   /* background-color: #714938; */
 }
 
