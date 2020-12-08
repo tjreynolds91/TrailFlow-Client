@@ -22,7 +22,7 @@ code {
   overflow: hidden;
   position: relative;
   background-color: #e4fcfc;
-  color: #8d6657;
+  color: tomato;
   box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -30,7 +30,7 @@ code {
   position: absolute;
   margin: 0 auto;
   margin-top: 6vh;
-  margin-left: 0%;
+  margin-left: 5%;
   padding: 10px;
   border: 1px solid black;
   overflow: hidden;
