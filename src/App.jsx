@@ -51,7 +51,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Layout
-        isAuth={isAuth}
+        isAuth={this.state.isAuth}
         updateToken={this.updateToken}
         clearToken={this.clearToken}
         token={this.state.token}
